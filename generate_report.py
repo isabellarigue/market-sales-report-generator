@@ -29,8 +29,8 @@ OPENROUTER_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
 def format_brl(value):
     """Format a number as Brazilian real currency. For example, 1234.56 -> R$ 1.234,56"""
     if pd.isna(value):
-        return "R$ 0,00"
-    return "R$ {:,.2f}".format(value).replace(",", "X").replace(".", ",").replace("X", ".")
+        return "0,00"
+    return "{:,.2f}".format(value).replace(",", "X").replace(".", ",").replace("X", ".")
 
 
 def call_openrouter(prompt: str, max_tokens=600):
@@ -197,4 +197,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
